@@ -678,6 +678,56 @@
     }
     .footer-positioning::before { content: ''; width: 20px; height: 1px; background: var(--orange); }
 
+    /* ===================== SYSTEM FLOW ===================== */
+    .system-flow {
+      display: flex; align-items: flex-start; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+    }
+    .flow-col {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+      flex: 1; min-width: 200px;
+    }
+    .flow-label {
+      font-size: 10px; font-weight: 800; letter-spacing: 0.16em;
+      color: var(--orange); text-transform: uppercase; margin-bottom: 4px;
+    }
+    .flow-node {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 20px; width: 100%; max-width: 180px;
+      font-size: 13px; font-weight: 600; color: var(--text-light);
+      text-align: center; transition: var(--transition);
+    }
+    .flow-node:hover { border-color: var(--border-orange); color: var(--text-white); transform: translateY(-3px); }
+    .flow-node > :first-child { font-size: 26px; line-height: 1; }
+    .flow-arrow {
+      font-size: 28px; color: var(--orange); align-self: center;
+      padding: 0 12px; opacity: 0.5; flex-shrink: 0;
+    }
+
+    /* ===================== BIG STATS ===================== */
+    .big-stats-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 48px 32px;
+    }
+    .big-stat { text-align: center; flex: 1; min-width: 160px; padding: 16px; }
+    .big-stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(42px, 5vw, 64px); font-weight: 800;
+      color: var(--orange); line-height: 1;
+    }
+    .big-stat-unit { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; margin-left: 2px; }
+    .big-stat-label { font-size: 13px; color: var(--text-muted); margin-top: 10px; font-weight: 500; }
+    .big-stat-divider { width: 1px; height: 80px; background: var(--border); flex-shrink: 0; }
+
+    /* 2-col trust bullets */
+    .trust-bullets-2col {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      max-width: 700px; margin: 0 auto;
+    }
+
     /* ===================== ANIMATIONS ===================== */
     .scroll-progress {
       position: fixed;
@@ -840,6 +890,15 @@
       .services-grid { grid-template-columns: 1fr; gap: 12px; }
       .service-card { padding: 26px 20px; }
       .features-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      /* New visual elements */
+      .system-flow { gap: 8px; }
+      .flow-arrow { display: none; }
+      .flow-col { min-width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; }
+      .flow-node { max-width: 140px; padding: 12px 10px; font-size: 11px; }
+      .big-stats-row { padding: 28px 16px; gap: 0; }
+      .big-stat { min-width: 140px; padding: 12px 8px; }
+      .big-stat-divider { width: 100%; height: 1px; }
+      .trust-bullets-2col { grid-template-columns: 1fr; }
       .feature-pill { padding: 12px 12px; font-size: 12px; gap: 8px; }
       .feature-pill .fp-icon { width: 28px; height: 28px; font-size: 9px; }
       .steps-row { grid-template-columns: 1fr; gap: 12px; }
@@ -1028,7 +1087,7 @@
       <h1>Stop Losing Jobs to<br>Competitors Who Answer <em>Faster.</em></h1>
 
       <p class="hero-sub">
-        We install a connected AI system — voice booking agents, Google &amp; Local Services Ads, review automation, and CRM reactivation — that captures every lead and fills your schedule on autopilot.
+        One connected system. More calls captured. More jobs booked. Less leaking.
       </p>
 
       <div class="hero-cta-row">
@@ -1069,34 +1128,33 @@
   <div class="container">
     <div class="text-center fade-up">
       <div class="tag">The Problem</div>
-      <h2 class="section-title">The HVAC Jobs You're Losing Are Usually<br>Not Lost <span>on Price.</span></h2>
-      <p class="section-subtitle">Revenue leaks happen before the estimate is ever sent&mdash;in missed calls, slow responses, weak visibility, and disconnected tools.</p>
+      <h2 class="section-title">You're Not Losing Jobs on Price.<br>You're Losing Them <span>Before the Quote.</span></h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card fade-up fade-up-delay-1">
-        <div class="pain-icon">&#9742;</div>
+        <div class="pain-icon">📵</div>
         <h3>Missed Calls</h3>
-        <p>Many HVAC leads call when they need help right now. If nobody answers, they usually call the next company on Google. A missed call can mean a missed repair, replacement, or maintenance job.</p>
+        <p>They call. Nobody answers. They call the next company.</p>
       </div>
       <div class="pain-card fade-up fade-up-delay-2">
-        <div class="pain-icon">&#9201;</div>
+        <div class="pain-icon">⏱️</div>
         <h3>Slow Follow-Up</h3>
-        <p>When a customer submits a form or asks for a quote, speed matters. If follow-up takes hours, the lead can go cold. Fast calls, texts, and reminders help turn inquiries into booked appointments.</p>
+        <p>First to respond usually wins the job. Hours kill the lead.</p>
       </div>
       <div class="pain-card fade-up fade-up-delay-3">
-        <div class="pain-icon">&#128269;</div>
-        <h3>Weak Google Trust</h3>
-        <p>Before homeowners call, they check your Google profile, reviews, website, and service area. If your online presence looks weak or outdated, they may choose a competitor who appears more trusted.</p>
+        <div class="pain-icon">🔍</div>
+        <h3>Weak Google Presence</h3>
+        <p>If your profile, reviews, and site don't build trust — competitors get the call.</p>
       </div>
       <div class="pain-card fade-up fade-up-delay-4">
-        <div class="pain-icon">&#128164;</div>
-        <h3>Dead Customer Lists</h3>
-        <p>Past customers already know your company. Tune-up reminders, seasonal offers, and estimate follow-ups can bring them back. Without reactivation, valuable customer lists sit unused.</p>
+        <div class="pain-icon">💤</div>
+        <h3>Dormant Customer List</h3>
+        <p>Past customers are your easiest revenue. They're sitting untouched.</p>
       </div>
       <div class="pain-card fade-up fade-up-delay-5">
-        <div class="pain-icon">&#128279;</div>
+        <div class="pain-icon">🔌</div>
         <h3>Disconnected Tools</h3>
-        <p>Your website, ads, calls, reviews, and CRM should work together. When they are disconnected, leads get missed, follow-up becomes messy, and it is harder to know which marketing is producing jobs.</p>
+        <p>Ads, calls, CRM, reviews — running separately. Leads fall through the gaps.</p>
       </div>
     </div>
   </div>
@@ -1105,29 +1163,34 @@
 <!-- ===================== SOLUTION ===================== -->
 <section class="section" id="solution">
   <div class="container">
-    <div class="solution-top fade-up">
-      <div class="solution-copy">
-        <div class="tag">The Solution</div>
-        <h2 class="section-title">One Connected AI Growth System<br>for <span>HVAC Operators.</span></h2>
-        <p class="section-subtitle">Albert HVAC Venture connects the full customer journey&mdash;from the first search, first call, and first click to booked appointments, review requests, follow-up, reactivation, and reporting.</p>
-      </div>
-      <div>
-        <p style="font-size:15px;color:var(--text-muted);line-height:1.8;padding:28px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);border-left:3px solid var(--orange);">
-          "We don't build disconnected tools. We install a connected system that handles demand capture, booking, follow-up, reputation, reactivation, and reporting&mdash;all tied together so nothing falls through the cracks."
-        </p>
-      </div>
+    <div class="text-center fade-up" style="margin-bottom:64px;">
+      <div class="tag">The Solution</div>
+      <h2 class="section-title">One System. Every Touchpoint.<br><span>Nothing Falls Through.</span></h2>
+      <p class="section-subtitle" style="max-width:520px;margin-left:auto;margin-right:auto;">From first search to booked job — every piece connected.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-pill fade-up"><span class="fp-icon">AI</span>AI Voice Booking Agent</div>
-      <div class="feature-pill fade-up fade-up-delay-1"><span class="fp-icon">WEB</span>AI Website</div>
-      <div class="feature-pill fade-up fade-up-delay-2"><span class="fp-icon">MAP</span>Google Local Services Ads</div>
-      <div class="feature-pill fade-up fade-up-delay-3"><span class="fp-icon">AD</span>Google Search Ads</div>
-      <div class="feature-pill fade-up fade-up-delay-4"><span class="fp-icon">META</span>Meta Campaigns</div>
-      <div class="feature-pill fade-up fade-up-delay-1"><span class="fp-icon">SMS</span>SMS Callback Automation</div>
-      <div class="feature-pill fade-up fade-up-delay-2"><span class="fp-icon">&#9733;</span>Review &amp; Reputation</div>
-      <div class="feature-pill fade-up fade-up-delay-3"><span class="fp-icon">CRM</span>CRM Integration</div>
-      <div class="feature-pill fade-up fade-up-delay-4"><span class="fp-icon">RE</span>Client Reactivation</div>
-      <div class="feature-pill fade-up fade-up-delay-5"><span class="fp-icon">ROI</span>Call Tracking &amp; Reporting</div>
+
+    <!-- System Flow Diagram -->
+    <div class="system-flow fade-up">
+      <div class="flow-col">
+        <div class="flow-label">CAPTURE</div>
+        <div class="flow-node">📞<span>AI Voice Agent</span></div>
+        <div class="flow-node">🌐<span>AI Website</span></div>
+        <div class="flow-node">📍<span>LSA / Google Ads</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-col">
+        <div class="flow-label">CONVERT</div>
+        <div class="flow-node">💬<span>SMS Follow-Up</span></div>
+        <div class="flow-node">🗂️<span>CRM Intake</span></div>
+        <div class="flow-node">📅<span>Auto Booking</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-col">
+        <div class="flow-label">RETAIN</div>
+        <div class="flow-node">⭐<span>Review Workflow</span></div>
+        <div class="flow-node">🔄<span>Reactivation</span></div>
+        <div class="flow-node">📊<span>Reporting</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1135,46 +1198,40 @@
 <!-- ===================== SERVICES ===================== -->
 <section class="section section-alt" id="services">
   <div class="container">
-    <div class="text-center fade-up">
+    <div class="text-center fade-up" style="margin-bottom:56px;">
       <div class="tag">Services</div>
-      <h2 class="section-title">Built Around the Real Bottlenecks<br>in <span>HVAC Growth.</span></h2>
+      <h2 class="section-title">Everything an HVAC Company<br>Needs to <span>Stop Leaking Revenue.</span></h2>
     </div>
     <div class="services-grid">
       <div class="service-card fade-up">
-        <div class="service-num">Service 01</div>
-        <div class="service-icon-wrap">AI</div>
+        <div class="service-icon-wrap">🤖</div>
         <h3>AI Voice Booking Agent</h3>
-        <p>Answer, qualify, route, and follow up with more HVAC inquiries&mdash;even after hours. Never let an emergency call go to voicemail again. Your AI agent works 24/7 so your team doesn't have to.</p>
+        <p>Answers calls, qualifies leads, and books jobs — 24/7.</p>
       </div>
       <div class="service-card fade-up fade-up-delay-1">
-        <div class="service-num">Service 02</div>
-        <div class="service-icon-wrap">WEB</div>
+        <div class="service-icon-wrap">🌐</div>
         <h3>AI Website</h3>
-        <p>A fast, trust-building, conversion-focused website designed to turn visitors into booked calls. Built with SEO structure, local intent, and integrated lead capture from day one.</p>
+        <p>Fast, local, built to convert visitors into calls.</p>
       </div>
       <div class="service-card fade-up fade-up-delay-2">
-        <div class="service-num">Service 03</div>
-        <div class="service-icon-wrap">MAP</div>
-        <h3>Google &amp; Local Services Ads</h3>
-        <p>Capture high-intent homeowners searching for HVAC repair, installation, tune-ups, and emergency services. Dominate local search where decisions are made and jobs are booked.</p>
+        <div class="service-icon-wrap">📍</div>
+        <h3>Google &amp; LSA Ads</h3>
+        <p>Top placement when homeowners search for HVAC help.</p>
       </div>
       <div class="service-card fade-up fade-up-delay-3">
-        <div class="service-num">Service 04</div>
-        <div class="service-icon-wrap">&#9733;</div>
+        <div class="service-icon-wrap">⭐</div>
         <h3>Reviews &amp; Reputation</h3>
-        <p>Build trust faster with review acquisition workflows and stronger local social proof. Automate review requests after every completed job and respond at scale.</p>
+        <p>Automated review requests. More stars. More trust.</p>
       </div>
       <div class="service-card fade-up fade-up-delay-4">
-        <div class="service-num">Service 05</div>
-        <div class="service-icon-wrap">RE</div>
+        <div class="service-icon-wrap">🔄</div>
         <h3>Client Reactivation</h3>
-        <p>Turn old customers, unsold estimates, tune-up lists, and membership opportunities into new booked revenue. Your existing database is your fastest path to new jobs.</p>
+        <p>Turn your old customer list into new booked jobs.</p>
       </div>
       <div class="service-card fade-up fade-up-delay-5">
-        <div class="service-num">Service 06</div>
-        <div class="service-icon-wrap">CRM</div>
+        <div class="service-icon-wrap">🗂️</div>
         <h3>CRM &amp; Automation</h3>
-        <p>Connect calls, forms, SMS, ads, reviews, and customer data into one operating system. See every lead, track every follow-up, and close the gaps where revenue leaks.</p>
+        <p>One system — every lead, follow-up, and job tracked.</p>
       </div>
     </div>
   </div>
@@ -1183,81 +1240,70 @@
 <!-- ===================== HOW IT WORKS ===================== -->
 <section class="section" id="how">
   <div class="container">
-    <div class="text-center fade-up">
+    <div class="text-center fade-up" style="margin-bottom:56px;">
       <div class="tag">Process</div>
-      <h2 class="section-title">From Leaking Leads to Booked Jobs<br>in <span>One Clean System.</span></h2>
-      <p class="section-subtitle">A structured 4-step process that builds, installs, and scales your AI growth infrastructure with no guesswork.</p>
+      <h2 class="section-title"><span>4 Steps</span> from Leaking Leads<br>to Booked Jobs.</h2>
     </div>
     <div class="steps-row">
       <div class="step-card fade-up fade-up-delay-1">
         <div class="step-num">1</div>
         <h3>Audit</h3>
-        <p>We review your current website, Google presence, ads, call handling, CRM, reviews, and follow-up process&mdash;mapping exactly where demand is leaking.</p>
+        <p>We map exactly where your demand is leaking.</p>
       </div>
       <div class="step-card fade-up fade-up-delay-2">
         <div class="step-num">2</div>
         <h3>Install</h3>
-        <p>We build and connect the AI website, voice agent, campaigns, SMS workflows, review engine, and CRM automations&mdash;live and integrated.</p>
+        <p>We build and connect every piece of the system.</p>
       </div>
       <div class="step-card fade-up fade-up-delay-3">
         <div class="step-num">3</div>
         <h3>Optimize</h3>
-        <p>We monitor calls, leads, booking flow, conversion gaps, and campaign performance&mdash;refining the system to capture more of your available demand.</p>
+        <p>We refine until the system captures more demand.</p>
       </div>
       <div class="step-card fade-up fade-up-delay-4">
         <div class="step-num">4</div>
         <h3>Scale</h3>
-        <p>We expand what works across services, markets, seasonal offers, reactivation campaigns, and higher-value jobs to accelerate growth.</p>
+        <p>We expand what works into more markets and jobs.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== TRUST SECTION ===================== -->
+<!-- ===================== STATS / TRUST ===================== -->
 <section class="section section-alt">
   <div class="container">
-    <div class="trust-grid">
-      <div>
-        <div class="tag fade-up">Why It Works</div>
-        <h2 class="section-title fade-up">Built for HVAC Teams That Want Growth Without<br><span>More Admin Work.</span></h2>
-        <p class="section-subtitle fade-up">The system handles what slows most HVAC operators down&mdash;so you can focus on running the jobs, not chasing the leads.</p>
-        <div class="trust-bullets">
-          <div class="trust-bullet fade-up fade-up-delay-1"><div class="trust-check">&#10003;</div><span>Capture demand after hours</span></div>
-          <div class="trust-bullet fade-up fade-up-delay-2"><div class="trust-check">&#10003;</div><span>Reduce missed-call leakage</span></div>
-          <div class="trust-bullet fade-up fade-up-delay-3"><div class="trust-check">&#10003;</div><span>Improve speed-to-lead response time</span></div>
-          <div class="trust-bullet fade-up fade-up-delay-4"><div class="trust-check">&#10003;</div><span>Make Google visibility more profitable</span></div>
-          <div class="trust-bullet fade-up fade-up-delay-5"><div class="trust-check">&#10003;</div><span>Reactivate existing customer lists</span></div>
-          <div class="trust-bullet fade-up"><div class="trust-check">&#10003;</div><span>Connect marketing to booked jobs</span></div>
-          <div class="trust-bullet fade-up fade-up-delay-1"><div class="trust-check">&#10003;</div><span>Keep customer data organized inside the CRM</span></div>
-        </div>
+    <div class="text-center fade-up" style="margin-bottom:56px;">
+      <div class="tag">Results</div>
+      <h2 class="section-title">The System Works.<br><span>The Numbers Show It.</span></h2>
+    </div>
+    <div class="big-stats-row fade-up">
+      <div class="big-stat">
+        <div class="big-stat-num">94<span class="big-stat-unit">%</span></div>
+        <div class="big-stat-label">After-Hours Calls Captured</div>
       </div>
-      <div class="fade-up fade-up-delay-2">
-        <div class="trust-visual">
-          <div class="trust-visual-title">System Performance Snapshot</div>
-          <div class="metric-row">
-            <div class="metric-item">
-              <div class="metric-label"><span class="metric-name">After-Hours Call Capture</span><span class="metric-val">94%</span></div>
-              <div class="metric-track"><div class="metric-fill" data-width="94"></div></div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-label"><span class="metric-name">Speed-to-Lead (Under 2 min)</span><span class="metric-val">91%</span></div>
-              <div class="metric-track"><div class="metric-fill" data-width="91"></div></div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-label"><span class="metric-name">Google Visibility Improvement</span><span class="metric-val">+63%</span></div>
-              <div class="metric-track"><div class="metric-fill" data-width="63"></div></div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-label"><span class="metric-name">Reactivation Campaign Opens</span><span class="metric-val">68%</span></div>
-              <div class="metric-track"><div class="metric-fill" data-width="68"></div></div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-label"><span class="metric-name">Review Workflow Completion</span><span class="metric-val">78%</span></div>
-              <div class="metric-track"><div class="metric-fill" data-width="78"></div></div>
-            </div>
-          </div>
-        </div>
+      <div class="big-stat-divider"></div>
+      <div class="big-stat">
+        <div class="big-stat-num">&lt;2<span class="big-stat-unit">min</span></div>
+        <div class="big-stat-label">Speed-to-Lead Response</div>
       </div>
+      <div class="big-stat-divider"></div>
+      <div class="big-stat">
+        <div class="big-stat-num">+63<span class="big-stat-unit">%</span></div>
+        <div class="big-stat-label">Google Visibility Increase</div>
+      </div>
+      <div class="big-stat-divider"></div>
+      <div class="big-stat">
+        <div class="big-stat-num">68<span class="big-stat-unit">%</span></div>
+        <div class="big-stat-label">Reactivation Open Rate</div>
+      </div>
+    </div>
+    <div class="trust-bullets-2col fade-up" style="margin-top:48px;">
+      <div class="trust-bullet"><div class="trust-check">✓</div><span>Capture demand after hours</span></div>
+      <div class="trust-bullet"><div class="trust-check">✓</div><span>Reduce missed-call leakage</span></div>
+      <div class="trust-bullet"><div class="trust-check">✓</div><span>Faster speed-to-lead</span></div>
+      <div class="trust-bullet"><div class="trust-check">✓</div><span>Profitable Google visibility</span></div>
+      <div class="trust-bullet"><div class="trust-check">✓</div><span>Reactivate old customers</span></div>
+      <div class="trust-bullet"><div class="trust-check">✓</div><span>Marketing tied to booked jobs</span></div>
     </div>
   </div>
 </section>
@@ -1341,8 +1387,8 @@
     <div class="reactivation-inner">
       <div>
         <div class="tag fade-up">Client Reactivation</div>
-        <h2 class="section-title fade-up">Your Old HVAC Customer List Is Not Dead. It Is a <span>Revenue Asset.</span></h2>
-        <p class="section-subtitle fade-up">Albert HVAC Venture helps HVAC companies reactivate past customers using seasonal offers, tune-up reminders, estimate follow-up, membership campaigns, and multi-channel automation.</p>
+        <h2 class="section-title fade-up">Your Old Customer List<br>Is a <span>Revenue Asset.</span></h2>
+        <p class="section-subtitle fade-up" style="max-width:400px;">Tune-up reminders, seasonal offers, SMS sequences — we turn inactive contacts into booked jobs.</p>
         <div class="reactiv-tags fade-up">
           <span class="reactiv-tag">Seasonal Offers</span>
           <span class="reactiv-tag">Tune-Up Reminders</span>
@@ -1449,8 +1495,8 @@
       </div>
       <div>
         <div class="tag fade-up">Google Visibility</div>
-        <h2 class="section-title fade-up">Your Google Presence Is Often the <span>First Sales Conversation.</span></h2>
-        <p class="section-subtitle fade-up">Homeowners buy speed, trust, proof, and confidence. Albert HVAC Venture helps HVAC companies own local search&mdash;with AI websites, Google Search Ads, Local Services Ads, review workflows, local SEO audits, call tracking, and CRM-connected follow-up.</p>
+        <h2 class="section-title fade-up">Your Google Presence Is the<br><span>First Sales Conversation.</span></h2>
+        <p class="section-subtitle fade-up" style="max-width:400px;">Homeowners decide before they call. We make sure they choose you.</p>
         <div style="display:flex;flex-direction:column;gap:12px;" class="fade-up">
           <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
             <span style="font-size:20px;">AD</span>
@@ -1483,8 +1529,8 @@
 <section class="final-cta-section" id="audit">
   <div class="container">
     <div class="tag" style="margin-bottom:24px;">Growth Audit</div>
-    <h2 class="fade-up">Ready to Stop Leaking HVAC Calls,<br>Leads, and <span style="color:var(--orange)">Follow-Up Revenue?</span></h2>
-    <p class="fade-up fade-up-delay-1">Book a Free HVAC Growth Audit and see exactly where your current HVAC growth system is leaking demand&mdash;and what a connected AI system could change.</p>
+    <h2 class="fade-up">See Exactly Where Your<br><span style="color:var(--orange)">HVAC Revenue Is Leaking.</span></h2>
+    <p class="fade-up fade-up-delay-1">30 minutes. No pitch. Just a clear picture of what's costing you jobs.</p>
     <div class="final-cta-row fade-up fade-up-delay-2">
       <a href="mailto:support@albertventuredesign.com?subject=30-Minute Growth Audit Request" class="btn-primary" style="font-size:17px;padding:20px 40px;">Book a Free HVAC Growth Audit <span class="btn-icon">&rarr;</span></a>
     </div>
