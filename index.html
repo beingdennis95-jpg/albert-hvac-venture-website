@@ -24,6 +24,12 @@
       --orange-bright: #FF7D35;
       --orange-glow: rgba(255,107,26,0.25);
       --orange-subtle: rgba(255,107,26,0.10);
+      --blue: #60A5FA;
+      --blue-bright: #7EC8F8;
+      --blue-subtle: rgba(96,165,250,0.10);
+      --blue-border: rgba(96,165,250,0.28);
+      --blue-glow: rgba(96,165,250,0.18);
+      --silver: #94A3B8;
       --bg-dark: #0A0B0E;
       --bg-card: #111318;
       --bg-card2: #141720;
@@ -398,7 +404,15 @@
     .dash-notif-time { font-size: 10px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
 
     /* ===================== PAIN POINTS ===================== */
-    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px; }
+    /* 6-col grid: top row 3 cards span 2 each, bottom row 2 cards span 3 each = centered */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+    .pain-card { grid-column: span 2; }
+    .pain-card:nth-child(4) { grid-column: 2 / span 2; }
+    .pain-card:nth-child(5) { grid-column: 4 / span 2; }
     .pain-card {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 28px;
@@ -418,6 +432,27 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 22px; margin-bottom: 16px;
     }
+    /* Color variants — icons */
+    .pain-icon--orange { background: var(--orange-subtle); border-color: var(--border-orange); }
+    .pain-icon--blue   { background: var(--blue-subtle);   border-color: var(--blue-border); }
+    .pain-icon--silver { background: rgba(148,163,184,0.08); border-color: rgba(148,163,184,0.25); }
+    /* Color variants — cards */
+    .pain-card--blue::before  { background: linear-gradient(90deg, var(--blue), transparent); }
+    .pain-card--blue:hover    { border-color: var(--blue-border); box-shadow: 0 0 32px var(--blue-glow); }
+    .pain-card--silver::before { background: linear-gradient(90deg, var(--silver), transparent); }
+    .pain-card--silver:hover  { border-color: rgba(148,163,184,0.35); box-shadow: 0 0 28px rgba(148,163,184,0.12); }
+    /* Service icon variants */
+    .siw--orange { background: var(--orange-subtle); border-color: var(--border-orange); }
+    .siw--blue   { background: var(--blue-subtle);   border-color: var(--blue-border); }
+    .siw--silver { background: rgba(148,163,184,0.08); border-color: rgba(148,163,184,0.25); }
+    /* Service card variants */
+    .svc--blue::after   { background: radial-gradient(ellipse at top left, rgba(96,165,250,0.07) 0%, transparent 60%); }
+    .svc--blue:hover    { border-color: var(--blue-border); box-shadow: 0 0 32px var(--blue-glow); }
+    .svc--silver::after { background: radial-gradient(ellipse at top left, rgba(148,163,184,0.06) 0%, transparent 60%); }
+    .svc--silver:hover  { border-color: rgba(148,163,184,0.30); }
+    /* Stat color variants */
+    .stat--orange { color: var(--orange); }
+    .stat--blue   { color: var(--blue); }
     .pain-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--text-white); }
     .pain-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
 
@@ -886,6 +921,7 @@
 
       /* Cards */
       .pain-grid { grid-template-columns: 1fr; gap: 12px; }
+      .pain-card { grid-column: span 1 !important; margin-left: 0 !important; }
       .pain-card { padding: 20px 18px; }
       .services-grid { grid-template-columns: 1fr; gap: 12px; }
       .service-card { padding: 26px 20px; }
@@ -945,7 +981,10 @@
       .section-title { font-size: clamp(24px, 6vw, 32px); }
       .section-subtitle { font-size: 15px; }
 
-      .pain-grid { grid-template-columns: 1fr; gap: 14px; }
+      .pain-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+      .pain-card { grid-column: span 2 !important; margin-left: 0 !important; }
+      .pain-card:nth-child(4) { grid-column: 1 / span 2 !important; }
+      .pain-card:nth-child(5) { grid-column: 3 / span 2 !important; }
       .services-grid { grid-template-columns: 1fr; gap: 14px; }
       .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
       .steps-row { grid-template-columns: 1fr; gap: 14px; }
@@ -979,7 +1018,10 @@
       .hero-stats { gap: 28px; }
       .hero-stat-divider { display: block; }
 
-      .pain-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .pain-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+      .pain-card { grid-column: span 2 !important; margin-left: 0 !important; }
+      .pain-card:nth-child(4) { grid-column: 1 / span 2 !important; }
+      .pain-card:nth-child(5) { grid-column: 3 / span 2 !important; }
       .services-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
       .features-grid { grid-template-columns: repeat(3, 1fr); }
       .steps-row { grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -1132,27 +1174,27 @@
     </div>
     <div class="pain-grid">
       <div class="pain-card fade-up fade-up-delay-1">
-        <div class="pain-icon">📵</div>
+        <div class="pain-icon pain-icon--orange">📵</div>
         <h3>Missed Calls</h3>
         <p>They call. Nobody answers. They call the next company.</p>
       </div>
       <div class="pain-card fade-up fade-up-delay-2">
-        <div class="pain-icon">⏱️</div>
+        <div class="pain-icon pain-icon--blue">⏱️</div>
         <h3>Slow Follow-Up</h3>
         <p>First to respond usually wins the job. Hours kill the lead.</p>
       </div>
       <div class="pain-card fade-up fade-up-delay-3">
-        <div class="pain-icon">🔍</div>
+        <div class="pain-icon pain-icon--silver">🔍</div>
         <h3>Weak Google Presence</h3>
         <p>If your profile, reviews, and site don't build trust — competitors get the call.</p>
       </div>
-      <div class="pain-card fade-up fade-up-delay-4">
-        <div class="pain-icon">💤</div>
+      <div class="pain-card pain-card--blue fade-up fade-up-delay-4">
+        <div class="pain-icon pain-icon--blue">💤</div>
         <h3>Dormant Customer List</h3>
         <p>Past customers are your easiest revenue. They're sitting untouched.</p>
       </div>
-      <div class="pain-card fade-up fade-up-delay-5">
-        <div class="pain-icon">🔌</div>
+      <div class="pain-card pain-card--silver fade-up fade-up-delay-5">
+        <div class="pain-icon pain-icon--silver">🔌</div>
         <h3>Disconnected Tools</h3>
         <p>Ads, calls, CRM, reviews — running separately. Leads fall through the gaps.</p>
       </div>
@@ -1204,32 +1246,32 @@
     </div>
     <div class="services-grid">
       <div class="service-card fade-up">
-        <div class="service-icon-wrap">🤖</div>
+        <div class="service-icon-wrap siw--orange">🤖</div>
         <h3>AI Voice Booking Agent</h3>
         <p>Answers calls, qualifies leads, and books jobs — 24/7.</p>
       </div>
-      <div class="service-card fade-up fade-up-delay-1">
-        <div class="service-icon-wrap">🌐</div>
+      <div class="service-card svc--blue fade-up fade-up-delay-1">
+        <div class="service-icon-wrap siw--blue">🌐</div>
         <h3>AI Website</h3>
         <p>Fast, local, built to convert visitors into calls.</p>
       </div>
       <div class="service-card fade-up fade-up-delay-2">
-        <div class="service-icon-wrap">📍</div>
+        <div class="service-icon-wrap siw--orange">📍</div>
         <h3>Google &amp; LSA Ads</h3>
         <p>Top placement when homeowners search for HVAC help.</p>
       </div>
-      <div class="service-card fade-up fade-up-delay-3">
-        <div class="service-icon-wrap">⭐</div>
+      <div class="service-card svc--silver fade-up fade-up-delay-3">
+        <div class="service-icon-wrap siw--silver">⭐</div>
         <h3>Reviews &amp; Reputation</h3>
         <p>Automated review requests. More stars. More trust.</p>
       </div>
-      <div class="service-card fade-up fade-up-delay-4">
-        <div class="service-icon-wrap">🔄</div>
+      <div class="service-card svc--blue fade-up fade-up-delay-4">
+        <div class="service-icon-wrap siw--blue">🔄</div>
         <h3>Client Reactivation</h3>
         <p>Turn your old customer list into new booked jobs.</p>
       </div>
       <div class="service-card fade-up fade-up-delay-5">
-        <div class="service-icon-wrap">🗂️</div>
+        <div class="service-icon-wrap siw--orange">🗂️</div>
         <h3>CRM &amp; Automation</h3>
         <p>One system — every lead, follow-up, and job tracked.</p>
       </div>
@@ -1278,22 +1320,22 @@
     </div>
     <div class="big-stats-row fade-up">
       <div class="big-stat">
-        <div class="big-stat-num">94<span class="big-stat-unit">%</span></div>
+        <div class="big-stat-num stat--orange">94<span class="big-stat-unit">%</span></div>
         <div class="big-stat-label">After-Hours Calls Captured</div>
       </div>
       <div class="big-stat-divider"></div>
       <div class="big-stat">
-        <div class="big-stat-num">&lt;2<span class="big-stat-unit">min</span></div>
+        <div class="big-stat-num stat--blue">&lt;2<span class="big-stat-unit">min</span></div>
         <div class="big-stat-label">Speed-to-Lead Response</div>
       </div>
       <div class="big-stat-divider"></div>
       <div class="big-stat">
-        <div class="big-stat-num">+63<span class="big-stat-unit">%</span></div>
+        <div class="big-stat-num stat--orange">+63<span class="big-stat-unit">%</span></div>
         <div class="big-stat-label">Google Visibility Increase</div>
       </div>
       <div class="big-stat-divider"></div>
       <div class="big-stat">
-        <div class="big-stat-num">68<span class="big-stat-unit">%</span></div>
+        <div class="big-stat-num stat--blue">68<span class="big-stat-unit">%</span></div>
         <div class="big-stat-label">Reactivation Open Rate</div>
       </div>
     </div>
