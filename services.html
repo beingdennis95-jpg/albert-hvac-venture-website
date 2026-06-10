@@ -1,0 +1,1106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HVAC Marketing Services: AI Booking, Websites, Google Ads & Reviews | Albert HVAC Venture</title>
+  <meta name="description" content="Explore HVAC marketing services including AI call answering, HVAC website design, Google Ads, Local Services Ads, reviews, CRM follow-up, and reactivation." />
+  <meta name="keywords" content="HVAC marketing, HVAC lead generation, HVAC Google Ads, HVAC Local Services Ads, HVAC website design, AI voice agent for HVAC, HVAC review automation, HVAC CRM automation, HVAC client reactivation" />
+  <meta property="og:title" content="HVAC Marketing Services: AI Booking, Websites, Google Ads & Reviews | Albert HVAC Venture" />
+  <meta property="og:description" content="Explore HVAC marketing services including AI call answering, HVAC website design, Google Ads, Local Services Ads, reviews, CRM follow-up, and reactivation." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #FF6B1A;
+      --orange-bright: #FF7D35;
+      --orange-glow: rgba(255,107,26,0.25);
+      --orange-subtle: rgba(255,107,26,0.10);
+      --bg-dark: #0A0B0E;
+      --bg-card: #111318;
+      --bg-card2: #141720;
+      --bg-section: #0D0F14;
+      --border: rgba(255,255,255,0.07);
+      --border-orange: rgba(255,107,26,0.30);
+      --text-white: #FFFFFF;
+      --text-muted: #8B8FA8;
+      --text-light: #C8CBDC;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow-card: 0 4px 32px rgba(0,0,0,0.45);
+      --shadow-orange: 0 0 32px rgba(255,107,26,0.20);
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===================== UTILITIES ===================== */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .section-alt { background: var(--bg-section); }
+    .section-card-bg { background: var(--bg-card2); }
+    .tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--orange-subtle); border: 1px solid var(--border-orange);
+      color: var(--orange-bright); font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+    }
+    .tag::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; display: inline-block; }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; line-height: 1.15;
+      color: var(--text-white); margin-bottom: 18px;
+    }
+    .section-title span { color: var(--orange); }
+    .section-subtitle {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--text-light); max-width: 640px;
+      line-height: 1.7; margin-bottom: 48px;
+    }
+    .text-center { text-align: center; }
+    .text-center .section-subtitle { margin-left: auto; margin-right: auto; }
+
+    /* ===================== BUTTONS ===================== */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--orange); color: #fff;
+      font-size: 15px; font-weight: 700; letter-spacing: 0.01em;
+      padding: 16px 32px; border-radius: 10px; border: none; cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 24px rgba(255,107,26,0.35);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .btn-primary:hover {
+      background: var(--orange-bright);
+      box-shadow: 0 6px 36px rgba(255,107,26,0.55);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text-white);
+      font-size: 15px; font-weight: 600;
+      padding: 14px 28px; border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: var(--transition); cursor: pointer;
+    }
+    .btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+    .btn-icon { font-size: 18px; transition: transform 0.2s; }
+    .btn-primary:hover .btn-icon { transform: translateX(4px); }
+
+    /* ===================== NAV ===================== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 16px 0;
+      background: rgba(10,11,14,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    nav.scrolled { padding: 12px 0; background: rgba(10,11,14,0.97); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+      min-width: max-content;
+    }
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(255,107,26,0.36);
+      background: linear-gradient(145deg, rgba(255,107,26,0.12), rgba(255,255,255,0.03));
+      box-shadow: 0 0 24px rgba(255,107,26,0.16);
+      transition: var(--transition);
+    }
+    .brand-mark img {
+      width: 39px;
+      height: 39px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(255,107,26,0.35));
+    }
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-white);
+    }
+    .brand-kicker {
+      margin-top: 6px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--orange-bright);
+    }
+    nav.scrolled .brand-mark { width: 48px; height: 48px; border-radius: 10px; }
+    nav.scrolled .brand-mark img { width: 36px; height: 36px; }
+    .nav-links {
+      display: flex; align-items: center; gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-white); }
+    .nav-links a.active { color: var(--orange-bright); }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .hamburger {
+      display: none;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+    .hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: var(--transition); }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 140px 0 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(255,107,26,0.08) 0%, transparent 65%),
+                  radial-gradient(ellipse 50% 40% at 10% 80%, rgba(255,107,26,0.04) 0%, transparent 60%),
+                  linear-gradient(180deg, #0A0B0E 0%, #0D0F14 100%);
+    }
+    .hero-grid-overlay {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,107,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange-subtle); border: 1px solid var(--border-orange);
+      color: var(--orange-bright); font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; padding: 7px 16px; border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .hero-badge-dot { width: 7px; height: 7px; background: var(--orange); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+    .hero h1 {
+      font-family: 'Manrope', 'Inter', sans-serif;
+      font-size: clamp(42px, 5vw, 66px);
+      font-weight: 800; line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--text-white); margin-bottom: 24px;
+      max-width: 780px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-light); line-height: 1.7;
+      max-width: 620px; margin-bottom: 40px;
+    }
+    .hero-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-services {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .hero-service-pill {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      color: var(--text-muted); font-size: 12px; font-weight: 500;
+      padding: 6px 14px; border-radius: 100px;
+      transition: var(--transition);
+    }
+    .hero-service-pill:hover { border-color: var(--border-orange); color: var(--orange-bright); }
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      z-index: 1;
+      opacity: 0.88;
+    }
+    .dashboard-mock {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 24px;
+      box-shadow: var(--shadow-card), var(--shadow-orange);
+    }
+    .dash-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .dash-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dash-dot.red { background: #FF5F57; }
+    .dash-dot.yellow { background: #FEBC2E; }
+    .dash-dot.green { background: #28C840; }
+    .dash-title { font-size: 12px; color: var(--text-muted); font-weight: 500; margin-left: 8px; }
+    .dash-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    .dash-stat {
+      background: var(--bg-dark); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 12px;
+    }
+    .dash-stat-label { font-size: 10px; color: var(--text-muted); font-weight: 500; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .dash-stat-value { font-size: 22px; font-weight: 800; color: var(--text-white); }
+    .dash-stat-value.orange { color: var(--orange); }
+    .dash-stat-change { font-size: 10px; color: #34D399; font-weight: 600; margin-top: 3px; }
+    .dash-bar-section { margin-bottom: 16px; }
+    .dash-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+    .dash-bar-track { height: 6px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
+    .dash-bar-fill { height: 100%; background: var(--orange); border-radius: 3px; transition: width 1.5s ease; }
+    .dash-notifications { display: flex; flex-direction: column; gap: 8px; }
+    .dash-notif {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--bg-dark); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 12px;
+    }
+    .dash-notif-icon { font-size: 16px; }
+    .dash-notif-text { font-size: 11px; color: var(--text-light); line-height: 1.4; }
+    .dash-notif-time { font-size: 10px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
+
+    /* ===================== PAIN POINTS ===================== */
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .pain-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .pain-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: linear-gradient(90deg, var(--orange), transparent);
+      opacity: 0; transition: var(--transition);
+    }
+    .pain-card:hover { border-color: var(--border-orange); transform: translateY(-4px); box-shadow: var(--shadow-orange); }
+    .pain-card:hover::before { opacity: 1; }
+    .pain-icon {
+      width: 48px; height: 48px; background: var(--orange-subtle);
+      border: 1px solid var(--border-orange); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 16px;
+    }
+    .pain-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--text-white); }
+    .pain-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ===================== SOLUTION / FEATURES ===================== */
+    .solution-top { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 64px; }
+    .solution-copy .section-subtitle { margin-bottom: 0; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+    .feature-pill {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 18px;
+      font-size: 14px; font-weight: 500; color: var(--text-light);
+      transition: var(--transition);
+    }
+    .feature-pill .fp-icon {
+      width: 32px; height: 32px; background: var(--orange-subtle);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 10px; line-height: 1; font-weight: 800; letter-spacing: 0;
+      color: var(--orange-bright); flex-shrink: 0;
+    }
+    .feature-pill:hover { border-color: var(--border-orange); color: var(--text-white); transform: translateY(-2px); }
+
+    /* ===================== SERVICES ===================== */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    .service-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 36px 32px;
+      transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(255,107,26,0.07) 0%, transparent 60%);
+      opacity: 0; transition: var(--transition);
+    }
+    .service-card:hover { border-color: var(--border-orange); transform: translateY(-5px); box-shadow: var(--shadow-orange); }
+    .service-card:hover::after { opacity: 1; }
+    .service-num {
+      font-size: 11px; font-weight: 700; color: var(--orange);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .service-icon-wrap {
+      width: 56px; height: 56px; background: var(--orange-subtle);
+      border: 1px solid var(--border-orange); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; line-height: 1; font-weight: 800; letter-spacing: 0;
+      color: var(--text-white); margin-bottom: 20px;
+    }
+    .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ===================== HOW IT WORKS ===================== */
+    .steps-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+    .steps-row::before {
+      content: ''; position: absolute; top: 40px; left: 10%; right: 10%;
+      height: 1px; background: linear-gradient(90deg, transparent, var(--border-orange), var(--border-orange), transparent);
+      z-index: 0;
+    }
+    .step-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px 24px;
+      text-align: center; position: relative; z-index: 1;
+      transition: var(--transition);
+    }
+    .step-card:hover { border-color: var(--border-orange); transform: translateY(-4px); }
+    .step-num {
+      width: 56px; height: 56px; background: var(--orange);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px; font-weight: 800; color: #fff;
+      margin: 0 auto 20px; box-shadow: 0 0 24px rgba(255,107,26,0.4);
+    }
+    .step-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .step-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ===================== TRUST / PROOF ===================== */
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .trust-bullets { display: flex; flex-direction: column; gap: 16px; }
+    .trust-bullet {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 22px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; transition: var(--transition);
+    }
+    .trust-bullet:hover { border-color: var(--border-orange); }
+    .trust-check {
+      width: 28px; height: 28px; background: var(--orange-subtle);
+      border: 1px solid var(--border-orange); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange); font-size: 13px; flex-shrink: 0; font-weight: 700;
+    }
+    .trust-bullet span { font-size: 15px; font-weight: 500; color: var(--text-light); }
+    .trust-visual {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px;
+      box-shadow: var(--shadow-card);
+    }
+    .trust-visual-title { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+    .metric-row { display: flex; flex-direction: column; gap: 18px; }
+    .metric-item { }
+    .metric-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .metric-name { font-size: 13px; color: var(--text-light); font-weight: 500; }
+    .metric-val { font-size: 13px; color: var(--orange); font-weight: 700; }
+    .metric-track { height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+    .metric-fill { height: 100%; background: linear-gradient(90deg, var(--orange), #FF9554); border-radius: 4px; transition: width 1.8s ease; }
+
+    /* ===================== PACKAGES ===================== */
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pkg-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 40px 32px;
+      display: flex; flex-direction: column;
+      transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .pkg-card.featured {
+      border-color: var(--orange);
+      box-shadow: 0 0 48px rgba(255,107,26,0.15), inset 0 0 60px rgba(255,107,26,0.03);
+    }
+    .pkg-card:hover:not(.featured) { border-color: var(--border-orange); transform: translateY(-4px); }
+    .pkg-card.featured:hover { transform: translateY(-4px); box-shadow: 0 0 60px rgba(255,107,26,0.25); }
+    .pkg-badge {
+      position: absolute; top: 20px; right: 20px;
+      background: var(--orange); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+      padding: 4px 12px; border-radius: 100px; text-transform: uppercase;
+    }
+    .pkg-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px; font-weight: 700; margin-bottom: 8px;
+    }
+    .pkg-tagline { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
+    .pkg-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
+    .pkg-includes { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    .pkg-list { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; margin-bottom: 32px; }
+    .pkg-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-light); }
+    .pkg-list li::before {
+      content: '\2713'; color: var(--orange); font-weight: 700;
+      font-size: 13px; margin-top: 1px; flex-shrink: 0;
+    }
+    .pkg-cta { margin-top: auto; }
+    .pkg-cta .btn-primary { width: 100%; justify-content: center; }
+    .pkg-cta .btn-ghost { width: 100%; justify-content: center; }
+
+    /* ===================== REACTIVATION ===================== */
+    .reactivation-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .reactiv-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .reactiv-tag {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 100px; padding: 8px 16px;
+      font-size: 13px; font-weight: 500; color: var(--text-light);
+      transition: var(--transition);
+    }
+    .reactiv-tag:hover { border-color: var(--border-orange); color: var(--orange-bright); }
+    .reactiv-visual {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .rv-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .rv-title { font-size: 14px; font-weight: 600; color: var(--text-white); }
+    .rv-status { font-size: 11px; font-weight: 600; color: #34D399; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); padding: 4px 10px; border-radius: 100px; }
+    .rv-timeline { display: flex; flex-direction: column; gap: 12px; }
+    .rv-event {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px;
+      background: var(--bg-dark); border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .rv-event-icon { font-size: 18px; }
+    .rv-event-content { flex: 1; }
+    .rv-event-title { font-size: 13px; font-weight: 600; color: var(--text-white); }
+    .rv-event-sub { font-size: 11px; color: var(--text-muted); }
+    .rv-event-time { font-size: 11px; color: var(--text-muted); }
+    .rv-event.active { border-color: var(--border-orange); }
+    .rv-event.active .rv-event-icon { color: var(--orange); }
+
+    /* ===================== GOOGLE VISIBILITY ===================== */
+    .google-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .google-visual {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .serp-item {
+      background: var(--bg-dark); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 18px; margin-bottom: 12px;
+      transition: var(--transition);
+    }
+    .serp-item:hover { border-color: var(--border-orange); }
+    .serp-item.rank1 { border-color: rgba(255,107,26,0.35); }
+    .serp-rank { font-size: 10px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .serp-title { font-size: 15px; font-weight: 700; color: var(--text-white); margin-bottom: 4px; }
+    .serp-url { font-size: 11px; color: #34D399; margin-bottom: 6px; }
+    .serp-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .serp-stars { display: flex; align-items: center; gap: 4px; margin-top: 6px; }
+    .serp-star { color: #FBBF24; font-size: 12px; }
+    .serp-rating { font-size: 12px; color: var(--text-muted); }
+    .google-channels { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .gchannel {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 14px;
+      font-size: 13px; font-weight: 500; color: var(--text-light);
+    }
+    .gchannel .gicon { font-size: 16px; }
+
+    /* ===================== FINAL CTA ===================== */
+    .final-cta-section {
+      padding: 120px 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,107,26,0.10) 0%, transparent 70%),
+                  var(--bg-dark);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .final-cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,107,26,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,107,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .final-cta-section .container { position: relative; z-index: 1; }
+    .final-cta-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 50px);
+      font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+    }
+    .final-cta-section p {
+      font-size: 18px; color: var(--text-light);
+      max-width: 560px; margin: 0 auto 40px; line-height: 1.7;
+    }
+    .final-cta-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .final-email { font-size: 14px; color: var(--text-muted); }
+    .final-email a { color: var(--orange); }
+    .final-email a:hover { text-decoration: underline; }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--bg-card); border-top: 1px solid var(--border);
+      padding: 60px 0 32px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 16px 0 20px; }
+    .footer-brand-link { margin-bottom: 4px; }
+    .footer-email { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--orange); }
+    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-muted); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 14px; color: var(--text-muted); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--orange-bright); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 24px; border-top: 1px solid var(--border);
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+    .footer-positioning {
+      font-size: 13px; color: var(--text-muted);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .footer-positioning::before { content: ''; width: 20px; height: 1px; background: var(--orange); }
+
+    /* ===================== ANIMATIONS ===================== */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2000;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-bright));
+      box-shadow: 0 0 18px rgba(255,107,26,0.45);
+      transform: scaleX(0);
+      transform-origin: left center;
+      pointer-events: none;
+    }
+    .fade-up,
+    .reveal-left,
+    .reveal-right,
+    .reveal-zoom {
+      --reveal-x: 0;
+      --reveal-y: 28px;
+      --reveal-scale: 1;
+      opacity: 0;
+      filter: blur(8px);
+      transform: translate3d(var(--reveal-x), var(--reveal-y), 0) scale(var(--reveal-scale));
+      transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, filter, transform;
+    }
+    .reveal-left { --reveal-x: -34px; --reveal-y: 0; }
+    .reveal-right { --reveal-x: 34px; --reveal-y: 0; }
+    .reveal-zoom { --reveal-y: 18px; --reveal-scale: 0.96; }
+    .fade-up.visible,
+    .reveal-left.visible,
+    .reveal-right.visible,
+    .reveal-zoom.visible {
+      --reveal-x: 0;
+      --reveal-y: 0;
+      --reveal-scale: 1;
+      opacity: 1;
+      filter: blur(0);
+    }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+    .fade-up-delay-5 { transition-delay: 0.5s; }
+    .visible.pain-card:hover,
+    .visible.step-card:hover,
+    .visible.pkg-card:hover:not(.featured),
+    .visible.pkg-card.featured:hover { transform: translateY(-4px); }
+    .visible.service-card:hover { transform: translateY(-5px); }
+    .visible.feature-pill:hover { transform: translateY(-2px); }
+    .dash-bar-fill,
+    .metric-fill { width: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-progress { display: none; }
+      .fade-up,
+      .reveal-left,
+      .reveal-right,
+      .reveal-zoom {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* ===================== MOBILE NAV ===================== */
+    .mobile-nav {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,11,14,0.98); z-index: 999;
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+      backdrop-filter: blur(24px);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 20px; font-weight: 600; color: var(--text-white); }
+    .mobile-nav a:hover, .mobile-nav a.active { color: var(--orange); }
+    .mobile-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; color: #fff; font-size: 28px; cursor: pointer;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 1180px) {
+      .hero .container { display: block; }
+      .hero-content { max-width: 760px; }
+      .hero-visual { display: none; }
+      .reveal-left,
+      .reveal-right {
+        --reveal-x: 0;
+        --reveal-y: 28px;
+      }
+    }
+    @media (max-width: 1024px) {
+      .hero-visual { display: none; }
+      .solution-top { grid-template-columns: 1fr; gap: 32px; }
+      .steps-row { grid-template-columns: repeat(2, 1fr); }
+      .steps-row::before { display: none; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .reactivation-inner { grid-template-columns: 1fr; gap: 40px; }
+      .google-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 72px 0; }
+      .nav-inner { gap: 14px; }
+      .brand-mark { width: 46px; height: 46px; border-radius: 10px; }
+      .brand-mark img { width: 34px; height: 34px; }
+      .brand-name { font-size: 16px; letter-spacing: 0.10em; }
+      .brand-kicker { font-size: 9px; letter-spacing: 0.18em; }
+      .hero-content, .hero-sub { max-width: 100%; }
+      .hero h1 {
+        font-size: clamp(34px, 9vw, 44px);
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+      .hero-badge {
+        max-width: 100%;
+        white-space: normal;
+        border-radius: 16px;
+      }
+      .pain-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero { padding: 120px 0 80px; }
+    }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<!-- ===================== NAV ===================== -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="brand-link" aria-label="Albert HVAC Venture home">
+        <span class="brand-mark">
+          <img src="albert_hvac_venture_social_pack/albert_hvac_venture_social_pack/brand_mark_from_logo.png"
+               alt="" aria-hidden="true" />
+        </span>
+        <span class="brand-copy">
+          <span class="brand-name">Albert</span>
+          <span class="brand-kicker">HVAC Venture</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="problem.html">The Problem</a></li>
+        <li><a href="solution.html">Solution</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="mailto:support@albertventuredesign.com" class="btn-ghost">Contact</a>
+        <a href="index.html#audit" class="btn-primary">Book a Growth Audit <span class="btn-icon">&rarr;</span></a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="openMobileNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="closeMobileNav()">&times;</button>
+  <a href="problem.html" onclick="closeMobileNav()">The Problem</a>
+  <a href="solution.html" onclick="closeMobileNav()">Solution</a>
+  <a href="services.html" class="active" onclick="closeMobileNav()">Services</a>
+  <a href="packages.html" onclick="closeMobileNav()">Packages</a>
+  <a href="how-it-works.html" onclick="closeMobileNav()">How It Works</a>
+  <a href="index.html#audit" class="btn-primary" onclick="closeMobileNav()">Book a Growth Audit &rarr;</a>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="tag">Services</div>
+      <h2 class="section-title">Built Around the Real Bottlenecks<br>in <span>HVAC Growth.</span></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-num">Service 01</div>
+        <div class="service-icon-wrap">AI</div>
+        <h3>AI Voice Booking Agent</h3>
+        <p>Answer, qualify, route, and follow up with more HVAC inquiries&mdash;even after hours. Never let an emergency call go to voicemail again. Your AI agent works 24/7 so your team doesn't have to.</p>
+      </div>
+      <div class="service-card fade-up fade-up-delay-1">
+        <div class="service-num">Service 02</div>
+        <div class="service-icon-wrap">WEB</div>
+        <h3>AI Website</h3>
+        <p>A fast, trust-building, conversion-focused website designed to turn visitors into booked calls. Built with SEO structure, local intent, and integrated lead capture from day one.</p>
+      </div>
+      <div class="service-card fade-up fade-up-delay-2">
+        <div class="service-num">Service 03</div>
+        <div class="service-icon-wrap">MAP</div>
+        <h3>Google &amp; Local Services Ads</h3>
+        <p>Capture high-intent homeowners searching for HVAC repair, installation, tune-ups, and emergency services. Dominate local search where decisions are made and jobs are booked.</p>
+      </div>
+      <div class="service-card fade-up fade-up-delay-3">
+        <div class="service-num">Service 04</div>
+        <div class="service-icon-wrap">&#9733;</div>
+        <h3>Reviews &amp; Reputation</h3>
+        <p>Build trust faster with review acquisition workflows and stronger local social proof. Automate review requests after every completed job and respond at scale.</p>
+      </div>
+      <div class="service-card fade-up fade-up-delay-4">
+        <div class="service-num">Service 05</div>
+        <div class="service-icon-wrap">RE</div>
+        <h3>Client Reactivation</h3>
+        <p>Turn old customers, unsold estimates, tune-up lists, and membership opportunities into new booked revenue. Your existing database is your fastest path to new jobs.</p>
+      </div>
+      <div class="service-card fade-up fade-up-delay-5">
+        <div class="service-num">Service 06</div>
+        <div class="service-icon-wrap">CRM</div>
+        <h3>CRM &amp; Automation</h3>
+        <p>Connect calls, forms, SMS, ads, reviews, and customer data into one operating system. See every lead, track every follow-up, and close the gaps where revenue leaks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLIENT REACTIVATION ===================== -->
+<section class="section section-alt" id="reactivation">
+  <div class="container">
+    <div class="reactivation-inner">
+      <div>
+        <div class="tag fade-up">Client Reactivation</div>
+        <h2 class="section-title fade-up">Your Old HVAC Customer List Is Not Dead. It Is a <span>Revenue Asset.</span></h2>
+        <p class="section-subtitle fade-up">Albert HVAC Venture helps HVAC companies reactivate past customers using seasonal offers, tune-up reminders, estimate follow-up, membership campaigns, and multi-channel automation.</p>
+        <div class="reactiv-tags fade-up">
+          <span class="reactiv-tag">Seasonal Offers</span>
+          <span class="reactiv-tag">Tune-Up Reminders</span>
+          <span class="reactiv-tag">Estimate Follow-Up</span>
+          <span class="reactiv-tag">Membership Campaigns</span>
+          <span class="reactiv-tag">SMS / Email Workflows</span>
+          <span class="reactiv-tag">Meta Retargeting</span>
+          <span class="reactiv-tag">AI Voice Follow-Up</span>
+          <span class="reactiv-tag">CRM Segmentation</span>
+        </div>
+        <a href="index.html#audit" class="btn-primary fade-up">Reactivate My Customer List <span class="btn-icon">&rarr;</span></a>
+      </div>
+      <div class="fade-up fade-up-delay-2">
+        <div class="reactiv-visual">
+          <div class="rv-header">
+            <span class="rv-title">Reactivation Campaign &mdash; Live</span>
+            <span class="rv-status">&#9679; Active</span>
+          </div>
+          <div class="rv-timeline">
+            <div class="rv-event active">
+              <span class="rv-event-icon">CRM</span>
+              <div class="rv-event-content">
+                <div class="rv-event-title">CRM Segment Built</div>
+                <div class="rv-event-sub">847 past customers &mdash; 90+ day inactive</div>
+              </div>
+              <span class="rv-event-time">Day 1</span>
+            </div>
+            <div class="rv-event active">
+              <span class="rv-event-icon">SMS</span>
+              <div class="rv-event-content">
+                <div class="rv-event-title">SMS Blast Sent</div>
+                <div class="rv-event-sub">Seasonal tune-up offer &mdash; 68% open rate</div>
+              </div>
+              <span class="rv-event-time">Day 2</span>
+            </div>
+            <div class="rv-event active">
+              <span class="rv-event-icon">AI</span>
+              <div class="rv-event-content">
+                <div class="rv-event-title">AI Voice Follow-Up</div>
+                <div class="rv-event-sub">Non-responders &mdash; 3 appointments booked</div>
+              </div>
+              <span class="rv-event-time">Day 4</span>
+            </div>
+            <div class="rv-event">
+              <span class="rv-event-icon">AD</span>
+              <div class="rv-event-content">
+                <div class="rv-event-title">Meta Retargeting Active</div>
+                <div class="rv-event-sub">Custom audience &mdash; membership offer</div>
+              </div>
+              <span class="rv-event-time">Day 5</span>
+            </div>
+            <div class="rv-event">
+              <span class="rv-event-icon">ROI</span>
+              <div class="rv-event-content">
+                <div class="rv-event-title">Performance Report</div>
+                <div class="rv-event-sub">Revenue attributed, ROI tracked</div>
+              </div>
+              <span class="rv-event-time">Day 14</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GOOGLE VISIBILITY ===================== -->
+<section class="section" id="google">
+  <div class="container">
+    <div class="google-inner">
+      <div class="fade-up">
+        <div class="google-visual">
+          <div style="font-size:12px;color:var(--text-muted);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Local HVAC Search Results</div>
+          <div class="serp-item rank1">
+            <div class="serp-rank">Top LSA &mdash; Top Placement</div>
+            <div class="serp-title">Your HVAC Company &mdash; Certified &amp; Insured</div>
+            <div class="serp-url">&#10003; Google Screened &middot; Local Services Ad</div>
+            <div class="serp-stars">
+              <span class="serp-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="serp-rating">4.9 (147 reviews)</span>
+            </div>
+          </div>
+          <div class="serp-item">
+            <div class="serp-rank">Google Search Ad</div>
+            <div class="serp-title">Emergency AC Repair &mdash; Same Day Service</div>
+            <div class="serp-url">yoursite.com &middot; Call Now &middot; Book Online</div>
+            <div class="serp-desc">Licensed HVAC repair, installation &amp; tune-ups. Available 24/7. Free estimates. 5-star rated.</div>
+          </div>
+          <div class="serp-item">
+            <div class="serp-rank">Google Business Profile</div>
+            <div class="serp-title">Your HVAC Co &mdash; Google Maps</div>
+            <div class="serp-stars">
+              <span class="serp-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="serp-rating">4.9 (147 reviews) &middot; Open 24 hrs</span>
+            </div>
+          </div>
+          <div class="google-channels">
+            <div class="gchannel"><span class="gicon">AD</span>Google Search Ads</div>
+            <div class="gchannel"><span class="gicon">MAP</span>Local Services Ads</div>
+            <div class="gchannel"><span class="gicon">&#9733;</span>Review Workflows</div>
+            <div class="gchannel"><span class="gicon">ROI</span>Call Tracking</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="tag fade-up">Google Visibility</div>
+        <h2 class="section-title fade-up">Your Google Presence Is Often the <span>First Sales Conversation.</span></h2>
+        <p class="section-subtitle fade-up">Homeowners buy speed, trust, proof, and confidence. Albert HVAC Venture helps HVAC companies own local search&mdash;with AI websites, Google Search Ads, Local Services Ads, review workflows, local SEO audits, call tracking, and CRM-connected follow-up.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;" class="fade-up">
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
+            <span style="font-size:20px;">AD</span>
+            <div>
+              <div style="font-size:14px;font-weight:600;">Local Services Ads</div>
+              <div style="font-size:13px;color:var(--text-muted);">Top-of-page placement with Google Screened badge</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
+            <span style="font-size:20px;">&#9733;</span>
+            <div>
+              <div style="font-size:14px;font-weight:600;">Review Acquisition</div>
+              <div style="font-size:13px;color:var(--text-muted);">Automated post-job requests that build social proof fast</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;">
+            <span style="font-size:20px;">CRM</span>
+            <div>
+              <div style="font-size:14px;font-weight:600;">CRM-Connected Follow-Up</div>
+              <div style="font-size:13px;color:var(--text-muted);">Every ad click and form fill tracked and followed up automatically</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta-section" id="audit">
+  <div class="container">
+    <div class="tag" style="margin-bottom:24px;">Growth Audit</div>
+    <h2 class="fade-up">Ready to Stop Leaking HVAC Calls,<br>Leads, and <span style="color:var(--orange)">Follow-Up Revenue?</span></h2>
+    <p class="fade-up fade-up-delay-1">Book a Free HVAC Growth Audit and see exactly where your current HVAC growth system is leaking demand&mdash;and what a connected AI system could change.</p>
+    <div class="final-cta-row fade-up fade-up-delay-2">
+      <a href="mailto:support@albertventuredesign.com?subject=30-Minute Growth Audit Request" class="btn-primary" style="font-size:17px;padding:20px 40px;">Book a Free HVAC Growth Audit <span class="btn-icon">&rarr;</span></a>
+    </div>
+    <p class="final-email fade-up fade-up-delay-3">Or email us directly: <a href="mailto:support@albertventuredesign.com">support@albertventuredesign.com</a></p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-link footer-brand-link" aria-label="Albert HVAC Venture home">
+          <span class="brand-mark">
+            <img src="albert_hvac_venture_social_pack/albert_hvac_venture_social_pack/brand_mark_from_logo.png"
+                 alt="" aria-hidden="true" />
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">Albert</span>
+            <span class="brand-kicker">HVAC Venture</span>
+          </span>
+        </a>
+        <p>AI Growth Infrastructure for HVAC Companies. We connect voice, website, ads, reviews, CRM, and reactivation into one system built to book more jobs.</p>
+        <a href="mailto:support@albertventuredesign.com" class="footer-email">
+          &#9993; support@albertventuredesign.com
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">AI Voice Booking Agent</a></li>
+          <li><a href="services.html">AI Website</a></li>
+          <li><a href="services.html">Google &amp; LSA Ads</a></li>
+          <li><a href="services.html">Reviews &amp; Reputation</a></li>
+          <li><a href="services.html">Client Reactivation</a></li>
+          <li><a href="services.html">CRM &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="solution.html">Solution</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="problem.html">The Problem</a></li>
+          <li><a href="services.html#reactivation">Client Reactivation</a></li>
+          <li><a href="services.html#google">Google Visibility</a></li>
+          <li><a href="index.html#audit">Book a Growth Audit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Albert HVAC Venture. All rights reserved.</p>
+      <p class="footer-positioning">AI Growth Infrastructure for HVAC Companies</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+  // Nav scroll behavior
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile nav
+  function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+
+  // Scroll progress and reveal animations
+  const scrollProgress = document.getElementById('scrollProgress');
+  function updateScrollProgress() {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    scrollProgress.style.transform = `scaleX(${progress})`;
+  }
+  updateScrollProgress();
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  window.addEventListener('resize', updateScrollProgress);
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('.solution-copy, .reactivation-inner > div:first-child, .google-inner > div:first-child')
+    .forEach(el => el.classList.add('reveal-left'));
+  document.querySelectorAll('.hero-visual, .reactivation-inner > div:last-child, .google-inner > div:last-child')
+    .forEach(el => el.classList.add('reveal-right'));
+  document.querySelectorAll('.pain-card, .service-card, .step-card, .pkg-card, .feature-pill, .trust-bullet')
+    .forEach(el => el.classList.add('reveal-zoom'));
+
+  document.querySelectorAll('.pain-grid, .services-grid, .steps-row, .packages-grid, .features-grid, .trust-bullets')
+    .forEach(group => {
+      [...group.children].forEach((child, index) => {
+        if (!child.style.transitionDelay) {
+          child.style.transitionDelay = `${Math.min(index * 0.08, 0.48)}s`;
+        }
+      });
+    });
+
+  function prepareFill(fill) {
+    const inlineWidth = fill.style.width;
+    const target = fill.dataset.width || inlineWidth.replace('%', '') || '0';
+    fill.dataset.width = target;
+    fill.style.width = '0%';
+  }
+
+  function animateFills(scope) {
+    scope.querySelectorAll('.dash-bar-fill, .metric-fill').forEach(fill => {
+      requestAnimationFrame(() => {
+        fill.style.width = `${fill.dataset.width}%`;
+      });
+    });
+  }
+
+  document.querySelectorAll('.dash-bar-fill, .metric-fill').forEach(prepareFill);
+
+  const revealSelector = '.fade-up, .reveal-left, .reveal-right, .reveal-zoom';
+  const revealItems = document.querySelectorAll(revealSelector);
+
+  if (reduceMotion) {
+    revealItems.forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('.dash-bar-fill, .metric-fill').forEach(fill => {
+      fill.style.width = `${fill.dataset.width}%`;
+    });
+  } else {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        animateFills(entry.target);
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+    revealItems.forEach(el => revealObserver.observe(el));
+  }
+</script>
+</body>
+</html>
+
