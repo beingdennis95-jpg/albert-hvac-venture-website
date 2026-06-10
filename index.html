@@ -299,13 +299,94 @@
       position: relative;
       z-index: 3;
       text-align: center;
-      overflow: hidden;
+      overflow: visible;
+    }
+    /* 2-col hero on large screens */
+    .hero-2col {
+      display: flex; align-items: center; gap: 48px;
+      justify-content: center;
     }
     .hero-content {
       position: relative; z-index: 1;
       max-width: min(860px, 100%);
       margin: 0 auto;
+      flex: 1;
     }
+    /* Dashboard panel */
+    .hero-dashboard {
+      display: none; /* hidden by default, shown at 1100px+ */
+      flex-shrink: 0; width: 480px;
+      background: rgba(17,19,24,0.92);
+      border: 1px solid rgba(255,107,26,0.30);
+      border-radius: 20px; padding: 20px;
+      box-shadow: 0 0 60px rgba(255,107,26,0.12), 0 8px 48px rgba(0,0,0,0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .hd-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px; padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .hd-title {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 700; color: var(--text-white);
+    }
+    .hd-title-icon { color: var(--orange); font-size: 14px; }
+    .hd-date { font-size: 11px; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; }
+    /* Top 4 stat cards */
+    .hd-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+    .hd-stat {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px; padding: 12px 10px;
+    }
+    .hd-stat-label { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+    .hd-stat-val { font-size: 18px; font-weight: 800; color: var(--text-white); line-height: 1; margin-bottom: 4px; }
+    .hd-stat-val.c-orange { color: var(--orange); }
+    .hd-stat-val.c-blue { color: var(--blue); }
+    .hd-stat-change { font-size: 10px; color: #34D399; font-weight: 600; margin-bottom: 6px; }
+    .hd-spark { width: 100%; height: 24px; }
+    /* Middle metric cards */
+    .hd-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+    .hd-metric {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px; padding: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hd-metric-icon {
+      width: 34px; height: 34px; background: var(--orange-subtle);
+      border: 1px solid var(--border-orange); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .hd-metric-icon.blue { background: var(--blue-subtle); border-color: var(--blue-border); }
+    .hd-metric-label { font-size: 10px; color: var(--text-muted); margin-bottom: 2px; }
+    .hd-metric-val { font-size: 18px; font-weight: 800; color: var(--text-white); line-height: 1; }
+    .hd-metric-val.c-orange { color: var(--orange); }
+    .hd-metric-val.c-blue { color: var(--blue); }
+    .hd-metric-sub { font-size: 9px; color: var(--text-muted); margin-top: 2px; }
+    .hd-metric-badge { font-size: 9px; font-weight: 700; color: #34D399; }
+    /* Activity feed */
+    .hd-feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .hd-feed-title { font-size: 11px; font-weight: 600; color: var(--text-light); }
+    .hd-live { display: flex; align-items: center; gap: 4px; font-size: 10px; color: #34D399; font-weight: 600; }
+    .hd-live::before { content: ''; width: 6px; height: 6px; background: #34D399; border-radius: 50%; animation: pulse 2s infinite; }
+    .hd-feed { display: flex; flex-direction: column; gap: 6px; }
+    .hd-feed-row {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 8px; padding: 7px 10px;
+    }
+    .hd-feed-icon { font-size: 13px; flex-shrink: 0; }
+    .hd-feed-text { flex: 1; font-size: 11px; color: var(--text-light); line-height: 1.3; }
+    .hd-feed-time { font-size: 10px; color: var(--text-muted); white-space: nowrap; }
+    .hd-feed-badge {
+      font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+      white-space: nowrap;
+    }
+    .badge-green { background: rgba(52,211,153,0.12); color: #34D399; border: 1px solid rgba(52,211,153,0.25); }
+    .badge-blue  { background: var(--blue-subtle); color: var(--blue); border: 1px solid var(--blue-border); }
+    .badge-orange { background: var(--orange-subtle); color: var(--orange); border: 1px solid var(--border-orange); }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,107,26,0.12); border: 1px solid rgba(255,107,26,0.35);
@@ -1077,6 +1158,17 @@
       .reveal-left { --reveal-x: -28px; }
       .reveal-right { --reveal-x: 28px; }
     }
+    /* ---- Hero 2-col: show dashboard on large screens ---- */
+    @media (min-width: 1100px) {
+      .hero .container { text-align: left; }
+      .hero-badge { justify-content: flex-start; }
+      .hero-cta-row { justify-content: flex-start; }
+      .hero-trust-row { justify-content: flex-start; }
+      .hero-stats { justify-content: flex-start; }
+      .hero-sub { margin-left: 0; margin-right: 0; }
+      .hero-content { max-width: 520px; margin: 0; }
+      .hero-dashboard { display: block; }
+    }
 
     /* ---- Large desktops: 1441px+ ---- */
     @media (min-width: 1441px) {
@@ -1150,6 +1242,7 @@
   <div class="hero-grid-overlay"></div>
 
   <div class="container">
+    <div class="hero-2col">
     <div class="hero-content fade-up">
 
       <div class="hero-badge">
@@ -1203,7 +1296,114 @@
         </div>
       </div>
 
-    </div>
+    </div><!-- end hero-content -->
+
+    <!-- ===== HERO DASHBOARD (desktop only) ===== -->
+    <div class="hero-dashboard fade-up fade-up-delay-3">
+      <!-- Header -->
+      <div class="hd-header">
+        <div class="hd-title"><span class="hd-title-icon">📊</span> HVAC Growth Command Center</div>
+        <div class="hd-date">May 12 – May 18, 2025</div>
+      </div>
+
+      <!-- 4 top stats -->
+      <div class="hd-stats">
+        <div class="hd-stat">
+          <div class="hd-stat-label">Total Leads</div>
+          <div class="hd-stat-val">142</div>
+          <div class="hd-stat-change">▲ 28% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,20 15,16 25,18 35,12 45,14 55,8 65,10 80,4" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hd-stat">
+          <div class="hd-stat-label">Booked Jobs</div>
+          <div class="hd-stat-val c-orange">38</div>
+          <div class="hd-stat-change">▲ 35% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,22 15,18 25,20 35,14 45,16 55,9 65,11 80,5" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hd-stat">
+          <div class="hd-stat-label">Revenue</div>
+          <div class="hd-stat-val" style="font-size:14px">$24,680</div>
+          <div class="hd-stat-change">▲ 41% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,21 15,17 25,19 35,11 45,15 55,7 65,9 80,3" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hd-stat">
+          <div class="hd-stat-label">ROI</div>
+          <div class="hd-stat-val c-blue">6.2x</div>
+          <div class="hd-stat-change">▲ 18% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,20 15,18 25,15 35,13 45,11 55,8 65,6 80,3" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 3 metric cards -->
+      <div class="hd-metrics">
+        <div class="hd-metric">
+          <div class="hd-metric-icon">📅</div>
+          <div>
+            <div class="hd-metric-label">Appointments Booked</div>
+            <div class="hd-metric-val c-orange">24</div>
+            <div class="hd-metric-sub">From AI &amp; Automation</div>
+          </div>
+        </div>
+        <div class="hd-metric">
+          <div class="hd-metric-icon blue">📞</div>
+          <div>
+            <div class="hd-metric-label">Missed Calls Recovered</div>
+            <div class="hd-metric-val c-blue">17</div>
+            <div class="hd-metric-sub hd-metric-badge">▲ This Week</div>
+          </div>
+        </div>
+        <div class="hd-metric">
+          <div class="hd-metric-icon">🎙️</div>
+          <div>
+            <div class="hd-metric-label">AI Voice Answer Rate</div>
+            <div class="hd-metric-val c-orange">98%</div>
+            <div class="hd-metric-sub">24/7 Coverage</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live activity feed -->
+      <div class="hd-feed-header">
+        <span class="hd-feed-title">Lead Activity Feed</span>
+        <span class="hd-live">Live</span>
+      </div>
+      <div class="hd-feed">
+        <div class="hd-feed-row">
+          <span class="hd-feed-icon">📍</span>
+          <span class="hd-feed-text">New lead from Google Ads</span>
+          <span class="hd-feed-time">2m ago</span>
+          <span class="hd-feed-badge badge-green">Qualified</span>
+        </div>
+        <div class="hd-feed-row">
+          <span class="hd-feed-icon">📞</span>
+          <span class="hd-feed-text">AI Voice Agent recovered missed call</span>
+          <span class="hd-feed-time">4m ago</span>
+          <span class="hd-feed-badge badge-blue">Booked</span>
+        </div>
+        <div class="hd-feed-row">
+          <span class="hd-feed-icon">📅</span>
+          <span class="hd-feed-text">Appointment booked — AC tune-up Tue 2pm</span>
+          <span class="hd-feed-time">7m ago</span>
+          <span class="hd-feed-badge badge-orange">New Job</span>
+        </div>
+        <div class="hd-feed-row">
+          <span class="hd-feed-icon">⭐</span>
+          <span class="hd-feed-text">Review request sent to customer</span>
+          <span class="hd-feed-time">12m ago</span>
+          <span class="hd-feed-badge badge-green">Sent</span>
+        </div>
+      </div>
+    </div><!-- end hero-dashboard -->
+
+    </div><!-- end hero-2col -->
   </div>
 </section>
 
