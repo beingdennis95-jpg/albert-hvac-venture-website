@@ -341,8 +341,36 @@
     }
     .hero-cta-row {
       display: flex; align-items: center; justify-content: center;
-      gap: 14px; flex-wrap: wrap; margin-bottom: 56px;
+      gap: 14px; flex-wrap: wrap; margin-bottom: 28px;
     }
+    /* Pulsing ring around primary CTA */
+    .cta-pulse-wrap { position: relative; display: inline-flex; }
+    .cta-pulse-wrap::before {
+      content: ''; position: absolute; inset: -6px;
+      border-radius: 16px; border: 1px solid rgba(255,107,26,0.45);
+      animation: cta-ring 2.4s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes cta-ring {
+      0%,100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 0; transform: scale(1.08); }
+    }
+    .btn-primary--hero { font-size: 16px; padding: 18px 36px; }
+    /* Trust row below CTA */
+    .hero-trust-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .hero-trust-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; color: rgba(200,203,220,0.70); font-weight: 500;
+    }
+    .hero-trust-sep { color: rgba(255,255,255,0.20); font-size: 16px; }
+    .htick { font-weight: 800; font-size: 12px; }
+    .htick--orange { color: var(--orange); }
+    .htick--blue   { color: var(--blue); }
+    .htick--silver { color: var(--silver); }
+    .hero-br-hide { display: none; }
     .hero-stats {
       display: flex; align-items: center; justify-content: center;
       gap: 40px; flex-wrap: wrap;
@@ -628,7 +656,10 @@
     .rv-event-sub { font-size: 11px; color: var(--text-muted); }
     .rv-event-time { font-size: 11px; color: var(--text-muted); }
     .rv-event.active { border-color: var(--border-orange); }
-    .rv-event.active .rv-event-icon { color: var(--orange); }
+    .rv-event.active .rv-event-icon { color: var(--orange); font-weight: 800; }
+    .rv-event.rv-blue { border-color: var(--blue-border); }
+    .rv-event.rv-blue .rv-event-icon { color: var(--blue); font-weight: 800; }
+    .rv-event.rv-silver .rv-event-icon { color: var(--silver); font-weight: 800; }
 
     /* ===================== GOOGLE VISIBILITY ===================== */
     .google-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
@@ -1123,20 +1154,31 @@
 
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        AI Growth System for HVAC Companies
+        AI Growth Infrastructure · HVAC Companies
       </div>
 
       <h1>Stop Losing Jobs to<br>Competitors Who Answer <em>Faster.</em></h1>
 
       <p class="hero-sub">
-        One connected system. More calls captured. More jobs booked. Less leaking.
+        Voice booking. Google ads. Reviews. CRM. Reactivation.<br class="hero-br-hide">
+        One system. Every lead captured.
       </p>
 
       <div class="hero-cta-row">
-        <a href="#contact" class="btn-primary">
-          Get Your Free Growth Audit <span class="btn-icon">&#8594;</span>
-        </a>
-        <a href="#services" class="btn-ghost">See How It Works</a>
+        <div class="cta-pulse-wrap">
+          <a href="#audit" class="btn-primary btn-primary--hero">
+            Book a Free Growth Audit <span class="btn-icon">&#8594;</span>
+          </a>
+        </div>
+        <a href="#services" class="btn-ghost">How It Works ↓</a>
+      </div>
+
+      <div class="hero-trust-row">
+        <span class="hero-trust-item"><span class="htick htick--orange">✓</span> No long-term contracts</span>
+        <span class="hero-trust-sep">·</span>
+        <span class="hero-trust-item"><span class="htick htick--blue">✓</span> Results in 60 days</span>
+        <span class="hero-trust-sep">·</span>
+        <span class="hero-trust-item"><span class="htick htick--silver">✓</span> Built for HVAC operators</span>
       </div>
 
       <div class="hero-stats">
@@ -1474,7 +1516,7 @@
               </div>
               <span class="rv-event-time">Day 4</span>
             </div>
-            <div class="rv-event">
+            <div class="rv-event rv-blue">
               <span class="rv-event-icon">AD</span>
               <div class="rv-event-content">
                 <div class="rv-event-title">Meta Retargeting Active</div>
@@ -1482,7 +1524,7 @@
               </div>
               <span class="rv-event-time">Day 5</span>
             </div>
-            <div class="rv-event">
+            <div class="rv-event rv-silver">
               <span class="rv-event-icon">ROI</span>
               <div class="rv-event-content">
                 <div class="rv-event-title">Performance Report</div>
