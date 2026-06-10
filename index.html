@@ -1092,27 +1092,72 @@
       .services-grid { grid-template-columns: 1fr; gap: 12px; }
       .service-card { padding: 26px 20px; }
       .features-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-      /* New visual elements */
-      .system-flow { gap: 8px; }
+      /* System flow */
+      .system-flow { flex-direction: column; align-items: stretch; gap: 12px; }
       .flow-arrow { display: none; }
-      .flow-col { min-width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; }
-      .flow-node { max-width: 140px; padding: 12px 10px; font-size: 11px; }
-      .big-stats-row { padding: 28px 16px; gap: 0; }
-      .big-stat { min-width: 140px; padding: 12px 8px; }
-      .big-stat-divider { width: 100%; height: 1px; }
+      .flow-col { min-width: 100%; flex-direction: column; align-items: stretch; gap: 8px; }
+      .flow-node { max-width: 100%; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 14px 16px; font-size: 13px; text-align: left; }
+      .flow-node > :first-child { font-size: 20px; flex-shrink: 0; }
+      .flow-label { text-align: center; padding: 8px 0 4px; }
+
+      /* Big stats — 2×2 grid */
+      .big-stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; padding: 0; background: var(--border); border-radius: 16px; overflow: hidden; }
+      .big-stat { min-width: unset; padding: 22px 12px; background: var(--bg-card); }
+      .big-stat-num { font-size: clamp(32px, 8vw, 44px); }
+      .big-stat-unit { font-size: 18px; }
+      .big-stat-label { font-size: 12px; margin-top: 6px; }
+      .big-stat-divider { display: none; }
+
+      /* Trust bullets */
       .trust-bullets-2col { grid-template-columns: 1fr; }
-      .feature-pill { padding: 12px 12px; font-size: 12px; gap: 8px; }
-      .feature-pill .fp-icon { width: 28px; height: 28px; font-size: 9px; }
+      .trust-bullet { padding: 14px 16px; }
+
+      /* Steps */
       .steps-row { grid-template-columns: 1fr; gap: 12px; }
       .steps-row::before { display: none; }
       .step-card { padding: 24px 18px; }
+
+      /* Trust grid */
       .trust-grid { grid-template-columns: 1fr; gap: 28px; }
-      .trust-bullet { padding: 14px 16px; }
+
+      /* Packages */
       .packages-grid { grid-template-columns: 1fr; gap: 14px; }
       .pkg-card { padding: 26px 20px; }
+
+      /* Solution */
       .solution-top { grid-template-columns: 1fr; gap: 24px; }
+
+      /* Reactivation */
       .reactivation-inner { grid-template-columns: 1fr; gap: 28px; }
+      .reactiv-visual { padding: 16px; }
+      .rv-event { gap: 8px; padding: 10px 12px; }
+      .rv-event-sub { font-size: 10px; white-space: normal; }
+      .rv-event-time { white-space: nowrap; font-size: 10px; }
+
+      /* Google */
       .google-inner { grid-template-columns: 1fr; gap: 28px; }
+      .google-visual { padding: 16px; }
+      .serp-item { padding: 12px; }
+      .serp-desc { display: none; }
+      .google-channels { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .gchannel { padding: 8px 10px; font-size: 11px; }
+
+      /* Dashboard showcase on small mobile */
+      .showcase-dashboard { padding: 14px; }
+      .showcase-stats { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+      .showcase-stats .hd-stat { padding: 10px 8px; }
+      .showcase-stats .hd-stat-val { font-size: 18px; }
+      .showcase-stats .hd-stat-label { font-size: 10px; }
+      .showcase-metrics { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+      .showcase-metrics .hd-metric { padding: 10px; gap: 8px; }
+      .showcase-metrics .hd-metric-val { font-size: 16px; }
+      .hd-feed-row { flex-wrap: wrap; gap: 4px 8px; }
+      .hd-feed-text { min-width: 100%; order: 2; }
+      .hd-feed-time { font-size: 9px; }
+
+      /* Misc */
+      .feature-pill { padding: 12px 12px; font-size: 12px; gap: 8px; }
+      .feature-pill .fp-icon { width: 28px; height: 28px; font-size: 9px; }
 
       /* Final CTA */
       .final-cta-section { padding: 72px 0; }
@@ -1151,15 +1196,35 @@
       .pain-card { grid-column: span 2 !important; margin-left: 0 !important; }
       .pain-card:nth-child(4) { grid-column: 1 / span 2 !important; }
       .pain-card:nth-child(5) { grid-column: 3 / span 2 !important; }
-      .services-grid { grid-template-columns: 1fr; gap: 14px; }
+      .services-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .service-card { padding: 22px 18px; }
       .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .steps-row { grid-template-columns: 1fr; gap: 14px; }
+      .steps-row { grid-template-columns: 1fr 1fr; gap: 14px; }
       .steps-row::before { display: none; }
       .trust-grid { grid-template-columns: 1fr; gap: 32px; }
       .packages-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; gap: 14px; }
       .solution-top { grid-template-columns: 1fr; gap: 28px; }
       .reactivation-inner { grid-template-columns: 1fr; gap: 32px; }
       .google-inner { grid-template-columns: 1fr; gap: 32px; }
+
+      /* System flow — medium phone */
+      .system-flow { flex-direction: column; align-items: stretch; gap: 14px; }
+      .flow-arrow { display: none; }
+      .flow-col { min-width: 100%; flex-direction: column; align-items: stretch; gap: 8px; }
+      .flow-node { max-width: 100%; flex-direction: row; align-items: center; justify-content: flex-start; gap: 14px; padding: 14px 18px; font-size: 14px; text-align: left; }
+      .flow-node > :first-child { font-size: 22px; flex-shrink: 0; }
+
+      /* Big stats — 2×2 grid */
+      .big-stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; padding: 0; background: var(--border); border-radius: 16px; overflow: hidden; }
+      .big-stat { min-width: unset; padding: 24px 16px; background: var(--bg-card); }
+      .big-stat-divider { display: none; }
+
+      /* Dashboard showcase on medium phone */
+      .showcase-dashboard { padding: 18px; }
+      .showcase-stats { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+      .showcase-metrics { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+      .hd-feed-row { flex-wrap: wrap; gap: 4px 8px; }
+      .hd-feed-text { min-width: 100%; order: 2; }
 
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; text-align: center; }
