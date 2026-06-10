@@ -1511,23 +1511,6 @@
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // Pause video on mobile for performance
-  const heroVideo = document.querySelector('.hero-video');
-  if (heroVideo) {
-    const mq = window.matchMedia('(max-width: 767px)');
-    const handleVideoVisibility = (e) => {
-      if (e.matches) {
-        heroVideo.pause();
-        heroVideo.style.display = 'none';
-      } else {
-        heroVideo.style.display = '';
-        heroVideo.play().catch(() => {});
-      }
-    };
-    handleVideoVisibility(mq);
-    mq.addEventListener('change', handleVideoVisibility);
-  }
-
   // Mobile nav — lock body scroll when open
   function openMobileNav() {
     document.getElementById('mobileNav').classList.add('open');
