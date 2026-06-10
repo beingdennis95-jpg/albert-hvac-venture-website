@@ -299,7 +299,7 @@
       position: relative;
       z-index: 3;
       text-align: center;
-      overflow: visible;
+      overflow: hidden;
     }
     /* 2-col hero on large screens */
     .hero-2col {
@@ -387,6 +387,60 @@
     .badge-green { background: rgba(52,211,153,0.12); color: #34D399; border: 1px solid rgba(52,211,153,0.25); }
     .badge-blue  { background: var(--blue-subtle); color: var(--blue); border: 1px solid var(--blue-border); }
     .badge-orange { background: var(--orange-subtle); color: var(--orange); border: 1px solid var(--border-orange); }
+
+    /* ===================== SHOWCASE DASHBOARD SECTION ===================== */
+    .showcase-dashboard {
+      background: rgba(17,19,24,0.90);
+      border: 1px solid rgba(255,107,26,0.28);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 0 80px rgba(255,107,26,0.10), 0 12px 64px rgba(0,0,0,0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: relative;
+      z-index: 2;
+    }
+    .showcase-stats {
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 12px !important;
+      margin-bottom: 16px !important;
+    }
+    .showcase-stats .hd-stat {
+      padding: 16px 14px;
+    }
+    .showcase-stats .hd-stat-label { font-size: 11px; }
+    .showcase-stats .hd-stat-val { font-size: 22px; }
+    .showcase-stats .hd-stat-change { font-size: 11px; }
+    .showcase-bottom {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 16px;
+      align-items: start;
+    }
+    .showcase-metrics {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 10px !important;
+      margin-bottom: 0 !important;
+    }
+    .showcase-metrics .hd-metric { padding: 14px; }
+    .showcase-metrics .hd-metric-label { font-size: 11px; }
+    .showcase-metrics .hd-metric-val { font-size: 20px; }
+    .showcase-feed-col { display: flex; flex-direction: column; }
+
+    @media (max-width: 1024px) {
+      .showcase-bottom { grid-template-columns: 1fr; }
+      .showcase-feed-col { margin-top: 4px; }
+    }
+    @media (max-width: 767px) {
+      .showcase-dashboard { padding: 18px; }
+      .showcase-stats { grid-template-columns: repeat(2, 1fr) !important; }
+      .showcase-metrics { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 480px) {
+      .showcase-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+      .showcase-metrics { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+    }
+
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,107,26,0.12); border: 1px solid rgba(255,107,26,0.35);
@@ -1242,7 +1296,6 @@
   <div class="hero-grid-overlay"></div>
 
   <div class="container">
-    <div class="hero-2col">
     <div class="hero-content fade-up">
 
       <div class="hero-badge">
@@ -1250,7 +1303,7 @@
         AI Growth Infrastructure · HVAC Companies
       </div>
 
-      <h1>Answer Every Call.<br>Book More Jobs.<br><em>Grow Faster.</em></h1>
+      <h1>Stop Losing Jobs to<br>Competitors Who Answer <em>Faster.</em></h1>
 
       <p class="hero-sub">
         Voice booking. Google ads. Reviews. CRM. Reactivation.<br class="hero-br-hide">
@@ -1297,113 +1350,6 @@
       </div>
 
     </div><!-- end hero-content -->
-
-    <!-- ===== HERO DASHBOARD (desktop only) ===== -->
-    <div class="hero-dashboard fade-up fade-up-delay-3">
-      <!-- Header -->
-      <div class="hd-header">
-        <div class="hd-title"><span class="hd-title-icon">📊</span> HVAC Growth Command Center</div>
-        <div class="hd-date">May 12 – May 18, 2025</div>
-      </div>
-
-      <!-- 4 top stats -->
-      <div class="hd-stats">
-        <div class="hd-stat">
-          <div class="hd-stat-label">Total Leads</div>
-          <div class="hd-stat-val">142</div>
-          <div class="hd-stat-change">▲ 28% vs last 7d</div>
-          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
-            <polyline points="0,20 15,16 25,18 35,12 45,14 55,8 65,10 80,4" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="hd-stat">
-          <div class="hd-stat-label">Booked Jobs</div>
-          <div class="hd-stat-val c-orange">38</div>
-          <div class="hd-stat-change">▲ 35% vs last 7d</div>
-          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
-            <polyline points="0,22 15,18 25,20 35,14 45,16 55,9 65,11 80,5" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="hd-stat">
-          <div class="hd-stat-label">Revenue</div>
-          <div class="hd-stat-val" style="font-size:14px">$24,680</div>
-          <div class="hd-stat-change">▲ 41% vs last 7d</div>
-          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
-            <polyline points="0,21 15,17 25,19 35,11 45,15 55,7 65,9 80,3" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="hd-stat">
-          <div class="hd-stat-label">ROI</div>
-          <div class="hd-stat-val c-blue">6.2x</div>
-          <div class="hd-stat-change">▲ 18% vs last 7d</div>
-          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
-            <polyline points="0,20 15,18 25,15 35,13 45,11 55,8 65,6 80,3" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- 3 metric cards -->
-      <div class="hd-metrics">
-        <div class="hd-metric">
-          <div class="hd-metric-icon">📅</div>
-          <div>
-            <div class="hd-metric-label">Appointments Booked</div>
-            <div class="hd-metric-val c-orange">24</div>
-            <div class="hd-metric-sub">From AI &amp; Automation</div>
-          </div>
-        </div>
-        <div class="hd-metric">
-          <div class="hd-metric-icon blue">📞</div>
-          <div>
-            <div class="hd-metric-label">Missed Calls Recovered</div>
-            <div class="hd-metric-val c-blue">17</div>
-            <div class="hd-metric-sub hd-metric-badge">▲ This Week</div>
-          </div>
-        </div>
-        <div class="hd-metric">
-          <div class="hd-metric-icon">🎙️</div>
-          <div>
-            <div class="hd-metric-label">AI Voice Answer Rate</div>
-            <div class="hd-metric-val c-orange">98%</div>
-            <div class="hd-metric-sub">24/7 Coverage</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Live activity feed -->
-      <div class="hd-feed-header">
-        <span class="hd-feed-title">Lead Activity Feed</span>
-        <span class="hd-live">Live</span>
-      </div>
-      <div class="hd-feed">
-        <div class="hd-feed-row">
-          <span class="hd-feed-icon">📍</span>
-          <span class="hd-feed-text">New lead from Google Ads</span>
-          <span class="hd-feed-time">2m ago</span>
-          <span class="hd-feed-badge badge-green">Qualified</span>
-        </div>
-        <div class="hd-feed-row">
-          <span class="hd-feed-icon">📞</span>
-          <span class="hd-feed-text">AI Voice Agent recovered missed call</span>
-          <span class="hd-feed-time">4m ago</span>
-          <span class="hd-feed-badge badge-blue">Booked</span>
-        </div>
-        <div class="hd-feed-row">
-          <span class="hd-feed-icon">📅</span>
-          <span class="hd-feed-text">Appointment booked — AC tune-up Tue 2pm</span>
-          <span class="hd-feed-time">7m ago</span>
-          <span class="hd-feed-badge badge-orange">New Job</span>
-        </div>
-        <div class="hd-feed-row">
-          <span class="hd-feed-icon">⭐</span>
-          <span class="hd-feed-text">Review request sent to customer</span>
-          <span class="hd-feed-time">12m ago</span>
-          <span class="hd-feed-badge badge-green">Sent</span>
-        </div>
-      </div>
-    </div><!-- end hero-dashboard -->
-
-    </div><!-- end hero-2col -->
   </div>
 </section>
 
@@ -1439,6 +1385,154 @@
         <div class="pain-icon pain-icon--silver">🔌</div>
         <h3>Disconnected Tools</h3>
         <p>Ads, calls, CRM, reviews — running separately. Leads fall through the gaps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DASHBOARD SHOWCASE ===================== -->
+<section class="section section-alt" id="dashboard">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:48px;">
+      <div class="tag">Live System</div>
+      <h2 class="section-title">Everything Connected.<br><span>Every Metric Visible.</span></h2>
+      <p class="section-subtitle" style="max-width:480px;margin:0 auto;">This is what your HVAC growth looks like when all the pieces are running as one system.</p>
+    </div>
+
+    <div class="showcase-dashboard fade-up">
+      <!-- Header -->
+      <div class="hd-header">
+        <div class="hd-title"><span class="hd-title-icon">📊</span> HVAC Growth Command Center</div>
+        <div class="hd-date">May 12 – May 18, 2025</div>
+      </div>
+
+      <!-- 4 top stats -->
+      <div class="hd-stats showcase-stats">
+        <div class="hd-stat">
+          <div class="hd-stat-label">Total Leads</div>
+          <div class="hd-stat-val">142</div>
+          <div class="hd-stat-change">▲ 28% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,20 15,16 25,18 35,12 45,14 55,8 65,10 80,4" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hd-stat">
+          <div class="hd-stat-label">Booked Jobs</div>
+          <div class="hd-stat-val c-orange">38</div>
+          <div class="hd-stat-change">▲ 35% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,22 15,18 25,20 35,14 45,16 55,9 65,11 80,5" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hd-stat">
+          <div class="hd-stat-label">Revenue</div>
+          <div class="hd-stat-val" style="font-size:18px;">$24,680</div>
+          <div class="hd-stat-change">▲ 41% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,21 15,17 25,19 35,11 45,15 55,7 65,9 80,3" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hd-stat">
+          <div class="hd-stat-label">ROI</div>
+          <div class="hd-stat-val c-blue">6.2x</div>
+          <div class="hd-stat-change">▲ 18% vs last 7d</div>
+          <svg class="hd-spark" viewBox="0 0 80 24" preserveAspectRatio="none">
+            <polyline points="0,20 15,18 25,15 35,13 45,11 55,8 65,6 80,3" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Bottom: metrics + activity feed -->
+      <div class="showcase-bottom">
+        <div class="hd-metrics showcase-metrics">
+          <div class="hd-metric">
+            <div class="hd-metric-icon">📅</div>
+            <div>
+              <div class="hd-metric-label">Appointments Booked</div>
+              <div class="hd-metric-val c-orange">24</div>
+              <div class="hd-metric-sub">From AI &amp; Automation</div>
+            </div>
+          </div>
+          <div class="hd-metric">
+            <div class="hd-metric-icon blue">📞</div>
+            <div>
+              <div class="hd-metric-label">Missed Calls Recovered</div>
+              <div class="hd-metric-val c-blue">17</div>
+              <div class="hd-metric-sub hd-metric-badge">▲ This Week</div>
+            </div>
+          </div>
+          <div class="hd-metric">
+            <div class="hd-metric-icon">🎙️</div>
+            <div>
+              <div class="hd-metric-label">AI Voice Answer Rate</div>
+              <div class="hd-metric-val c-orange">98%</div>
+              <div class="hd-metric-sub">24/7 Coverage</div>
+            </div>
+          </div>
+          <div class="hd-metric">
+            <div class="hd-metric-icon blue">⭐</div>
+            <div>
+              <div class="hd-metric-label">Review Requests Sent</div>
+              <div class="hd-metric-val c-blue">46</div>
+              <div class="hd-metric-sub hd-metric-badge">▲ This Week</div>
+            </div>
+          </div>
+          <div class="hd-metric">
+            <div class="hd-metric-icon">📍</div>
+            <div>
+              <div class="hd-metric-label">Google Ads Leads</div>
+              <div class="hd-metric-val c-orange">61</div>
+              <div class="hd-metric-sub">Cost per Lead $18.42</div>
+            </div>
+          </div>
+          <div class="hd-metric">
+            <div class="hd-metric-icon blue">🗂️</div>
+            <div>
+              <div class="hd-metric-label">CRM Follow-Ups Triggered</div>
+              <div class="hd-metric-val c-blue">39</div>
+              <div class="hd-metric-sub">Automated Follow-Up</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-feed-col">
+          <div class="hd-feed-header">
+            <span class="hd-feed-title">Lead Activity Feed</span>
+            <span class="hd-live">Live</span>
+          </div>
+          <div class="hd-feed">
+            <div class="hd-feed-row">
+              <span class="hd-feed-icon">📍</span>
+              <span class="hd-feed-text">New lead from Google Ads</span>
+              <span class="hd-feed-time">2m ago</span>
+              <span class="hd-feed-badge badge-green">Qualified</span>
+            </div>
+            <div class="hd-feed-row">
+              <span class="hd-feed-icon">📞</span>
+              <span class="hd-feed-text">AI Voice Agent recovered missed call</span>
+              <span class="hd-feed-time">4m ago</span>
+              <span class="hd-feed-badge badge-blue">Booked</span>
+            </div>
+            <div class="hd-feed-row">
+              <span class="hd-feed-icon">📅</span>
+              <span class="hd-feed-text">Appointment booked — AC tune-up Tue 2pm</span>
+              <span class="hd-feed-time">7m ago</span>
+              <span class="hd-feed-badge badge-orange">New Job</span>
+            </div>
+            <div class="hd-feed-row">
+              <span class="hd-feed-icon">⭐</span>
+              <span class="hd-feed-text">Review request sent to customer</span>
+              <span class="hd-feed-time">12m ago</span>
+              <span class="hd-feed-badge badge-green">Sent</span>
+            </div>
+            <div class="hd-feed-row">
+              <span class="hd-feed-icon">🗂️</span>
+              <span class="hd-feed-text">CRM follow-up triggered — estimate lead</span>
+              <span class="hd-feed-time">15m ago</span>
+              <span class="hd-feed-badge badge-blue">Auto</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
